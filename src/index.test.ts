@@ -1,10 +1,7 @@
 import request from "supertest";
 import { app } from "./index";
 
-describe('GET /user', () => {
-  it('responds with json', (done) => {
-    request(app)
-      .get('/')
-      .expect(200, done);
-  });
+it("Should return Josh Richards API", async () => {
+  const res = await request(app).get("/");
+  expect(res.text).toBe("Josh Richards API");
 });
